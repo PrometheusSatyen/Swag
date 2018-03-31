@@ -1,0 +1,27 @@
+{
+  "name": "PrometheusSatyen/Swag",
+  "type": "library",
+  "description": "Swag is a PHP library for interacting with the EVE ESI API.",
+  "keywords": ["framework", "http", "rest", "web service", "esi", "client", "eve online", "swagger"],
+  "homepage": "http://github.com/PrometheusSatyen/Swag",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Prometheus Satyen",
+      "email": "prometheussatyen@gmail.com",
+      "homepage": "http://github.com/PrometheusSatyen"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "guzzlehttp/guzzle": "^6.3",
+    "predis/predis": "^1.1"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Swag\\": "src/"
+    }
+  }
+}
