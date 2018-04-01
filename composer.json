@@ -1,5 +1,5 @@
 {
-  "name": "PrometheusSatyen/Swag",
+  "name": "esiswag/esiswag",
   "type": "library",
   "description": "Swag is a PHP library for interacting with the EVE ESI API.",
   "keywords": ["framework", "http", "rest", "web service", "esi", "client", "eve online", "swagger"],
@@ -9,7 +9,7 @@
     {
       "name": "Prometheus Satyen",
       "email": "prometheussatyen@gmail.com",
-      "homepage": "http://github.com/PrometheusSatyen"
+      "homepage": "https://github.com/PrometheusSatyen"
     }
   ],
   "require": {
