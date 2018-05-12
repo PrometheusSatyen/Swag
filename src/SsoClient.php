@@ -25,6 +25,7 @@ use Swag\Sso\TokenInterface;
 use Swag\Sso\TokenPair;
 
 use GuzzleHttp\Client as GuzzleClient;
+use Exception;
 
 class SsoClient {
 
@@ -118,13 +119,17 @@ class SsoClient {
     public function refresh(TokenPair $token) {
 
         $client = new GuzzleClient();
-        $res = $client->post($this->constructUrl('token'), [
-            'auth' => [$this->clientId, $this->clientSecret],
-            'form_params' => [
-                'grant_type' => 'refresh_token',
-                'refresh_token' => $token->refreshToken
-            ],
-        ]);
+        try {
+            $res = $client->post($this->constructUrl('token'), [
+                'auth' => [$this->clientId, $this->clientSecret],
+                'form_params' => [
+                    'grant_type' => 'refresh_token',
+                    'refresh_token' => $token->refreshToken
+                ],
+            ]);
+        } catch (Exception $e) {
+            throw new RefreshFailureException();
+        }
 
         $data = json_decode($res->getBody()->getContents());
 
